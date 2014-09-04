@@ -1,1 +1,1 @@
-../../../../src/MantisMediation.h
+../../Mantis-Ad-Network-AdMob/src/MantisMediation.h

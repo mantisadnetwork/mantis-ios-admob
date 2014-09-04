@@ -1,2 +1,2 @@
 platform :ios, '7.0'
-pod 'Mantis-Ad-Network-AdMob', :path => '~/Documents/projects/mantis-ios-admob/ios/', :branch => 'master'
+pod 'Mantis-Ad-Network-AdMob', :git => 'https://github.com/mantisadnetwork/mantis-ios-admob.git', :branch => 'master'

@@ -1,1 +1,1 @@
-../../../../src/MantisAd.h
+../../Mantis-Ad-Network-AdMob/src/MantisAd.h

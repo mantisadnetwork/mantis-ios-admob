@@ -8,12 +8,6 @@ This library depends on your application leveraging Cocoa Pods for dependency ma
 
 If you already have AdMob integrated into your application, it is as simple as including our library then configuring mediation through the AdMob interface. We assume you have experience already with Cocoa Pods, but if not, you can learn more about it here: http://guides.cocoapods.org/using/getting-started.html
 
-To pull in our library, add the following to your Podfile:
-
-```
-pod 'Mantis-Ad-Network-AdMob', :git => 'https://github.com/mantisadnetwork/mantis-ios-admob.git', :branch => 'master'
-```
-
 ## Example Implementation
 
 If you have never integrated into the AdMob SDK before, you can take a look at our example project that shows you how to not only configure AdMob, but to configure the required MANTIS values. This repository includes an example folder that you can run (but will require you to fill in a valid MANTIS property ID and AdMob id).
