@@ -4,7 +4,7 @@
 
 @implementation MantisAdRequest
 
--(void)exec:(NSArray*)zones context:(MantisContext*)context callback:( void( ^ )( MantisAdResponse*) )callback
+-(void)exec:(NSArray*)zones context:(MantisContext*)context userContext:(MantisUserContext*)userContext callback:( void( ^ )( MantisAdResponse*) )callback
 {
     NSURL *URL = [NSURL URLWithString:@"http://mantodea.mantisadnetwork.com/mobile/ads"];
     
@@ -13,13 +13,10 @@
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
     NSDictionary *data = @{
-        //@"title": @"This is the title",
-        //@"trackable": [NSNumber numberWithBool:YES],
-        //@"mobileUUID": @"123",
-        //@"screen": @"Screen!",
-        //@"age": [NSNumber numberWithInt:123],
-        //@"latitude": [NSNumber numberWithInt:123],
-        //@"longitude": [NSNumber numberWithInt:123],
+        @"trackable": [NSNumber numberWithBool:[userContext isTrackable]],
+        @"mobileUUID": [userContext getId],
+        @"latitude": [NSNumber numberWithFloat:[userContext getLatitude]],
+        @"longitude": [NSNumber numberWithFloat:[userContext getLongitude]],
         @"mobileSdk": [NSNumber numberWithBool:YES],
         @"zones": zones,
         @"propertyId": [context getPropertyId]

@@ -16,6 +16,7 @@
 		EC03504E19B8AC02004E020A /* MantisContext.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03504D19B8AC02004E020A /* MantisContext.m */; };
 		EC03505319B8AEE9004E020A /* MantisAdRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03505219B8AEE9004E020A /* MantisAdRequest.m */; };
 		EC0351C919B8D123004E020A /* MantisAd.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0351C819B8D123004E020A /* MantisAd.m */; };
+		EC0351CC19B8DCB4004E020A /* MantisUserContext.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0351CB19B8DCB4004E020A /* MantisUserContext.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		EC03505219B8AEE9004E020A /* MantisAdRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MantisAdRequest.m; sourceTree = "<group>"; };
 		EC03505419B8B7B4004E020A /* MantisAdResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MantisAdResponse.m; sourceTree = "<group>"; };
 		EC0351C819B8D123004E020A /* MantisAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MantisAd.m; sourceTree = "<group>"; };
+		EC0351CA19B8DB4B004E020A /* MantisUserContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MantisUserContext.h; sourceTree = "<group>"; };
+		EC0351CB19B8DCB4004E020A /* MantisUserContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MantisUserContext.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,8 @@
 				EC03505219B8AEE9004E020A /* MantisAdRequest.m */,
 				EC03505419B8B7B4004E020A /* MantisAdResponse.m */,
 				EC0351C819B8D123004E020A /* MantisAd.m */,
+				EC0351CA19B8DB4B004E020A /* MantisUserContext.h */,
+				EC0351CB19B8DCB4004E020A /* MantisUserContext.m */,
 			);
 			name = ios;
 			path = src;
@@ -258,6 +263,7 @@
 				EC03504C19B8ABE4004E020A /* MantisMediation.m in Sources */,
 				EC03505319B8AEE9004E020A /* MantisAdRequest.m in Sources */,
 				EC0351C919B8D123004E020A /* MantisAd.m in Sources */,
+				EC0351CC19B8DCB4004E020A /* MantisUserContext.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

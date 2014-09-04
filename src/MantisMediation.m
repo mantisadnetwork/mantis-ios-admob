@@ -4,6 +4,7 @@
 #import "MantisAdRequest.h"
 #import "MantisAd.h"
 #import "MantisAdResponse.h"
+#import "MantisUserContext.h"
 
 @implementation MantisMediation{
     MantisAd *_ad;
@@ -37,11 +38,20 @@
 - (void)requestBannerAd:(GADAdSize)adSize
               parameter:(NSString *)zone
                   label:(NSString *)serverLabel
-                request:(GADCustomEventRequest *)gadCustomEventRequest
+                request:(GADCustomEventRequest *)event
 {
     MantisAdRequest* request = [[MantisAdRequest alloc] init];
+    MantisUserContext* userContext = [[MantisUserContext alloc ]init];
     
-    [request exec:@[zone] context:[MantisContext instance] callback:^void(MantisAdResponse* response) {
+    if ([event userLatitude]) {
+        [userContext setLatitude:[event userLatitude]];
+    }
+    
+    if ([event userLongitude]) {
+        [userContext setLongitude:[event userLongitude]];
+    }
+    
+    [request exec:@[zone] context:[MantisContext instance] userContext:userContext callback:^void(MantisAdResponse* response) {
         if(response == nil){
             [self.delegate customEventBanner:self didFailAd:nil];
             
