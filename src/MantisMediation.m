@@ -39,18 +39,16 @@
                   label:(NSString *)serverLabel
                 request:(GADCustomEventRequest *)gadCustomEventRequest
 {
-    MantisContext* context = [[MantisContext alloc] init];
-    
     MantisAdRequest* request = [[MantisAdRequest alloc] init];
     
-    [request exec:@[@"zone"] context:context callback:^void(MantisAdResponse* response) {
+    [request exec:@[zone] context:[MantisContext instance] callback:^void(MantisAdResponse* response) {
         if(response == nil){
             [self.delegate customEventBanner:self didFailAd:nil];
             
             return;
         }
         
-        _ad = [response getAdForZone:@"zone"];
+        _ad = [response getAdForZone:zone];
         
         if(_ad == nil){
             [self.delegate customEventBanner:self didFailAd:nil];

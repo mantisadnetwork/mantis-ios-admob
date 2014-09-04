@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "MantisMediation.h"
+#import "MantisContext.h"
 
 @interface ViewController ()
 
@@ -19,13 +19,13 @@
 {
     [super viewDidLoad];
     
-    //[MantisContext setPropertyId:@"53422cdc8e92f89afbf09d5d"];
+    [[MantisContext instance] setPropertyId:@"XXXXX"];
     
     // Create a view of the standard size at the top of the screen.
     // Available AdSize constants are explained in GADAdSize.h.
     // Specify the ad unit ID.
     bannerView_ = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
-    bannerView_.adUnitID = @"ca-app-pub-6526362092043393/3064142865";
+    bannerView_.adUnitID = @"ca-app-pub-XXXXXXX";
     
     // Let the runtime know which UIViewController to restore after taking
     // the user wherever the ad goes and add it to the view hierarchy.

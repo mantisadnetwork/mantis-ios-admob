@@ -1,17 +1,29 @@
 #import "MantisContext.h"
 
-static NSString* propertyId;
-
 @implementation MantisContext
+
+@synthesize _propertyId;
+
++ (id)instance {
+    static MantisContext *context = nil;
+    
+    @synchronized(self) {
+        if (context == nil){
+            context = [[self alloc] init];
+        }
+    }
+    
+    return context;
+}
 
 -(void)setPropertyId:(NSString*)propertyId
 {
-    propertyId = [NSString stringWithString:propertyId];
+    _propertyId = propertyId;
 }
 
 -(NSString*)getPropertyId
 {
-    return propertyId;
+    return _propertyId;
 }
 
 @end

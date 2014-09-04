@@ -6,23 +6,23 @@
 
 -(void)exec:(NSArray*)zones context:(MantisContext*)context callback:( void( ^ )( MantisAdResponse*) )callback
 {
-    NSURL *URL = [NSURL URLWithString:@"http://mantisadnetwork.apiary-mock.com/mobile/serve"];
+    NSURL *URL = [NSURL URLWithString:@"http://mantodea.mantisadnetwork.com/mobile/ads"];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
     [request setHTTPMethod:@"POST"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
     NSDictionary *data = @{
-        @"title": @"This is the title",
-        @"trackable": [NSNumber numberWithBool:YES],
-        @"mobileUUID": @"123",
-        @"screen": @"Screen!",
-        @"age": [NSNumber numberWithInt:123],
-        @"latitude": [NSNumber numberWithInt:123],
-        @"longitude": [NSNumber numberWithInt:123],
+        //@"title": @"This is the title",
+        //@"trackable": [NSNumber numberWithBool:YES],
+        //@"mobileUUID": @"123",
+        //@"screen": @"Screen!",
+        //@"age": [NSNumber numberWithInt:123],
+        //@"latitude": [NSNumber numberWithInt:123],
+        //@"longitude": [NSNumber numberWithInt:123],
         @"mobileSdk": [NSNumber numberWithBool:YES],
         @"zones": zones,
-        @"propertyId": @"temp"//[context getPropertyId]
+        @"propertyId": [context getPropertyId]
     };
     
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:data options:0 error:nil];
