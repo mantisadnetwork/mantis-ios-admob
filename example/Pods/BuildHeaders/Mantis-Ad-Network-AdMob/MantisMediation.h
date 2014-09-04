@@ -1,1 +1,1 @@
-../../../../ios/src/MantisMediation.h
+../../../../src/MantisMediation.h

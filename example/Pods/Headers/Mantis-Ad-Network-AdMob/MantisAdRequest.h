@@ -1,1 +1,1 @@
-../../../../ios/src/MantisAdRequest.h
+../../../../src/MantisAdRequest.h
