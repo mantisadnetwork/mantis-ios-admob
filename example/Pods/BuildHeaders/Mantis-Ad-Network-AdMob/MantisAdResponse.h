@@ -1,0 +1,1 @@
+../../../../ios/src/MantisAdResponse.h

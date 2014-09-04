@@ -1,0 +1,18 @@
+PODS:
+  - Google-Mobile-Ads-SDK (6.11.1)
+  - Mantis-Ad-Network-AdMob (1.0.0):
+    - Google-Mobile-Ads-SDK (~> 6.10)
+
+DEPENDENCIES:
+  - Mantis-Ad-Network-AdMob (from `~/Documents/projects/mantis-ios-admob/ios/`)
+
+EXTERNAL SOURCES:
+  Mantis-Ad-Network-AdMob:
+    :branch: master
+    :path: ~/Documents/projects/mantis-ios-admob/ios/
+
+SPEC CHECKSUMS:
+  Google-Mobile-Ads-SDK: 657fcbf9436363d0f925cf905d176fb1cb10df85
+  Mantis-Ad-Network-AdMob: fc61f382268a8e0d779775e86e38c65a3968c7bb
+
+COCOAPODS: 0.33.1
