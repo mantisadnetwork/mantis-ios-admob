@@ -1,5 +1,6 @@
 #import "MantisAdRequest.h"
 #import "MantisContext.h"
+#import "MantisAdResponse.h"
 
 @implementation MantisAdRequest
 
@@ -21,7 +22,7 @@
         @"longitude": [NSNumber numberWithInt:123],
         @"mobileSdk": [NSNumber numberWithBool:YES],
         @"zones": zones,
-        @"propertyId": [context getPropertyId]
+        @"propertyId": @"temp"//[context getPropertyId]
     };
     
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:data options:0 error:nil];
@@ -47,7 +48,7 @@
             return;
         }
         
-        callback([MantisAdResponse init:parsedObject]);
+        callback([[MantisAdResponse alloc] init:parsedObject]);
     }];
     
     [task resume];

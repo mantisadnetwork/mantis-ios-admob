@@ -2,9 +2,13 @@
 #import "GADRequest.h"
 #import "MantisContext.h"
 #import "MantisAdRequest.h"
+#import "MantisAd.h"
 #import "MantisAdResponse.h"
 
-@implementation MantisMediation
+@implementation MantisMediation{
+    MantisAd *_ad;
+}
+
 @synthesize delegate;
 
 -(void)onTapBanner:(UITapGestureRecognizer*)sender
@@ -13,14 +17,14 @@
     [self.delegate customEventBannerWillLeaveApplication:self];
     [self.delegate customEventBannerWillPresentModal:self];
     
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://google.com"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[_ad getUrl]]];
 }
 
 -(void)setAdViewWithImageData:(NSData*)data url:(NSString*)url
 {
     dispatch_sync(dispatch_get_main_queue(), ^{
         mImageView.image = [UIImage imageWithData:data];
-        [mImageView setValue:url forKey:url];
+        //[mImageView setValue:url forKey:url];
         
         [self.delegate customEventBanner:self didReceiveAd:mImageView];
     });
@@ -35,36 +39,36 @@
                   label:(NSString *)serverLabel
                 request:(GADCustomEventRequest *)gadCustomEventRequest
 {
-    MantisContext* context = [MantisContext init];
+    MantisContext* context = [[MantisContext alloc] init];
     
-    MantisAdRequest* request = [MantisAdRequest init];
+    MantisAdRequest* request = [[MantisAdRequest alloc] init];
     
-    [request exec:@[zone] context:context callback:^void(MantisAdResponse* response) {
+    [request exec:@[@"zone"] context:context callback:^void(MantisAdResponse* response) {
         if(response == nil){
             [self.delegate customEventBanner:self didFailAd:nil];
             
             return;
         }
         
-        MantisAd *ad = [response getAdForZone:zone];
+        _ad = [response getAdForZone:@"zone"];
         
-        if(ad == nil){
+        if(_ad == nil){
             [self.delegate customEventBanner:self didFailAd:nil];
             
             return;
         }
         
-        mImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, [ad getWidth], [ad getHeight])];
+        mImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, [_ad getWidth], [_ad getHeight])];
         
-        NSData* savedData = [[NSUserDefaults standardUserDefaults] objectForKey:[ad getImage]];
+        NSData* savedData = [[NSUserDefaults standardUserDefaults] objectForKey:[_ad getImage]];
         
         if (savedData)
         {
-            [self setAdViewWithImageData:savedData url:[ad getUrl]];
+            [self setAdViewWithImageData:savedData url:[_ad getUrl]];
         }
         else
         {
-            NSURL *imageUrl = [[NSURL alloc] initWithString:[ad getImage]];
+            NSURL *imageUrl = [[NSURL alloc] initWithString:[_ad getImage]];
             
             [NSURLConnection sendAsynchronousRequest:[[NSURLRequest alloc] initWithURL:imageUrl] queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
              {
@@ -74,10 +78,10 @@
                      return;
                  }
                  
-                 [[NSUserDefaults standardUserDefaults] setObject:data forKey:[ad getImage]];
+                 [[NSUserDefaults standardUserDefaults] setObject:data forKey:[_ad getImage]];
                  [[NSUserDefaults standardUserDefaults] synchronize];
                  
-                 [self setAdViewWithImageData:data url:[ad getUrl]];
+                 [self setAdViewWithImageData:data url:[_ad getUrl]];
              }];
         }
     }];

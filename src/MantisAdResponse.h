@@ -1,6 +1,6 @@
 #import "MantisAd.h"
 
-@interface MantisAdResponse
+@interface MantisAdResponse : NSObject
 {
     
 }

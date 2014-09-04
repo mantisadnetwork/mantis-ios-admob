@@ -1,4 +1,4 @@
-@interface MantisAd
+@interface MantisAd : NSObject
 {
     
 }

@@ -9,14 +9,13 @@
 /* Begin PBXBuildFile section */
 		00C8BEB1EA50471BA5EDFEED /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C99ECFF55754A5F9D0117D4 /* libPods.a */; };
 		EC034FFB19B8A8E7004E020A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC034FFA19B8A8E7004E020A /* Foundation.framework */; };
-		EC03500019B8A8E7004E020A /* ios.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EC034FFF19B8A8E7004E020A /* ios.h */; };
-		EC03500219B8A8E7004E020A /* ios.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03500119B8A8E7004E020A /* ios.m */; };
 		EC03500A19B8A8E7004E020A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC034FFA19B8A8E7004E020A /* Foundation.framework */; };
 		EC03500C19B8A8E7004E020A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC03500B19B8A8E7004E020A /* UIKit.framework */; };
 		EC03500F19B8A8E7004E020A /* libios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC034FF719B8A8E7004E020A /* libios.a */; };
 		EC03504C19B8ABE4004E020A /* MantisMediation.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03504B19B8ABE4004E020A /* MantisMediation.m */; };
 		EC03504E19B8AC02004E020A /* MantisContext.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03504D19B8AC02004E020A /* MantisContext.m */; };
 		EC03505319B8AEE9004E020A /* MantisAdRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03505219B8AEE9004E020A /* MantisAdRequest.m */; };
+		EC0351C919B8D123004E020A /* MantisAd.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0351C819B8D123004E020A /* MantisAd.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +35,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				EC03500019B8A8E7004E020A /* ios.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,8 +46,6 @@
 		EC034FF719B8A8E7004E020A /* libios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libios.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC034FFA19B8A8E7004E020A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EC034FFE19B8A8E7004E020A /* ios-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ios-Prefix.pch"; sourceTree = "<group>"; };
-		EC034FFF19B8A8E7004E020A /* ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ios.h; sourceTree = "<group>"; };
-		EC03500119B8A8E7004E020A /* ios.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ios.m; sourceTree = "<group>"; };
 		EC03500719B8A8E7004E020A /* iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC03500B19B8A8E7004E020A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		EC03504519B8AA92004E020A /* MantisMediation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MantisMediation.h; sourceTree = "<group>"; };
@@ -61,6 +57,7 @@
 		EC03505119B8ADAA004E020A /* MantisAd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MantisAd.h; sourceTree = "<group>"; };
 		EC03505219B8AEE9004E020A /* MantisAdRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MantisAdRequest.m; sourceTree = "<group>"; };
 		EC03505419B8B7B4004E020A /* MantisAdResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MantisAdResponse.m; sourceTree = "<group>"; };
+		EC0351C819B8D123004E020A /* MantisAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MantisAd.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +115,6 @@
 		EC034FFC19B8A8E7004E020A /* ios */ = {
 			isa = PBXGroup;
 			children = (
-				EC034FFF19B8A8E7004E020A /* ios.h */,
-				EC03500119B8A8E7004E020A /* ios.m */,
 				EC034FFD19B8A8E7004E020A /* Supporting Files */,
 				EC03504519B8AA92004E020A /* MantisMediation.h */,
 				EC03504619B8AAD1004E020A /* MantisContext.h */,
@@ -130,6 +125,7 @@
 				EC03505119B8ADAA004E020A /* MantisAd.h */,
 				EC03505219B8AEE9004E020A /* MantisAdRequest.m */,
 				EC03505419B8B7B4004E020A /* MantisAdResponse.m */,
+				EC0351C819B8D123004E020A /* MantisAd.m */,
 			);
 			name = ios;
 			path = src;
@@ -261,7 +257,7 @@
 				EC03504E19B8AC02004E020A /* MantisContext.m in Sources */,
 				EC03504C19B8ABE4004E020A /* MantisMediation.m in Sources */,
 				EC03505319B8AEE9004E020A /* MantisAdRequest.m in Sources */,
-				EC03500219B8A8E7004E020A /* ios.m in Sources */,
+				EC0351C919B8D123004E020A /* MantisAd.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
