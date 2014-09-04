@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name = "Mantis-Ad-Network-AdMob"
   s.version = "1.0.0"
-  s.summary = "Monetize your mobile applications by showing advertisements from the MANTIS Ad Network."
+  s.summary = "Monetize your iOS mobile applications by showing advertisements from the MANTIS Ad Network."
   
   s.description = "The Google Mobile Ads SDK provides the ability to include third-party ad networks in its mediation layer, allowing you to diversiry your ad portfolio. Including this pod will give you the ability to reference our integration through the AdMob interface."
 
